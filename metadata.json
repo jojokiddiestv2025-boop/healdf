@@ -1,5 +1,7 @@
 {
-  "name": "Serenity AI Counsellor",
-  "description": "A compassionate AI counsellor to help you navigate your thoughts and feelings.",
-  "requestFramePermissions": []
+  "name": "Healing with MMA",
+  "description": "A compassionate AI counsellor named MMA, powered by Gemini Live for real-time voice conversations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
 }

@@ -5,17 +5,20 @@
 
 import { useState } from 'react';
 import { WelcomeScreen } from './components/WelcomeScreen';
-import { ChatScreen } from './components/ChatScreen';
+import { LiveVoiceScreen } from './components/LiveVoiceScreen';
 
 export default function App() {
-  const [screen, setScreen] = useState<'welcome' | 'chat'>('welcome');
+  const [screen, setScreen] = useState<'welcome' | 'voice'>('welcome');
 
   return (
     <div className="min-h-screen bg-warm-white text-stone-900 font-sans">
-      {screen === 'welcome' ? (
-        <WelcomeScreen onStart={() => setScreen('chat')} />
-      ) : (
-        <ChatScreen onBack={() => setScreen('welcome')} />
+      {screen === 'welcome' && (
+        <WelcomeScreen 
+          onStartVoice={() => setScreen('voice')}
+        />
+      )}
+      {screen === 'voice' && (
+        <LiveVoiceScreen onEnd={() => setScreen('welcome')} />
       )}
     </div>
   );
